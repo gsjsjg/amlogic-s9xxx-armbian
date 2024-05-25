@@ -22,7 +22,7 @@ on:
       armbian_board:
         description: "Select device board."
         required: false
-        default: "all"
+        default: "ai3399-c"
         type: choice
         options:
           - 全部
