@@ -63,15 +63,16 @@ initramfs_conf="/etc/initramfs-tools/update-initramfs.conf"
 ophub_release_file="/etc/ophub-release"
 
 # Set the default for downloading kernel sources from github.com
-repo_owner="unifreq"
+#repo_owner="unifreq"
+repo_owner="dearxjoe"
 repo_branch="main"
-build_kernel=("6.1.y" "6.6.y")
+build_kernel=("5.15.y" "6.1.y")
 # Set whether to use the latest kernel, options: [ true / false ]
 auto_kernel="true"
 # Set whether to apply custom kernel patches, options: [ true / false ]
 auto_patch="false"
 # Set custom signature for the kernel
-custom_name="-ophub"
+custom_name="-dearxjoe"
 # Set the kernel compile object, options: [ dtbs / all ]
 package_list="all"
 # Set the compression format, options: [ gzip / lzma / xz / zstd ]
