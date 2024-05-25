@@ -22,7 +22,7 @@ on:
       kernel_version:
         description: "Select kernel version"
         required: false
-        default: "5.15.y"
+        default: "5.15.y_6.1.y"
         type: choice
         options:
           - 5.4.y
