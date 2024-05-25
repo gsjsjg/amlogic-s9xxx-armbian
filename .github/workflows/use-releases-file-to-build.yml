@@ -1,6 +1,6 @@
 #==========================================================================
 # Description: Build Armbian
-# Copyright (C) 2021 https://github.com/ophub/amlogic-s9xxx-armbian
+# Copyright (C) 2021 https://github.com/dearxjoe/amlogic-s9xxx-armbian
 #==========================================================================
 
 name: Use Releases file to rebuild armbian
@@ -22,10 +22,11 @@ on:
       armbian_board:
         description: "Select device board."
         required: false
-        default: "all"
+        default: "ai3399-c"
         type: choice
         options:
-          - all
+          - 全部
+          - ai3399-c
           - s905w_s905x_s905mb_s905l3a_s905l3b_s905x2_s905x3_s912_s922x_s922x-ct2000_s922x-reva
           - s905x3-x88-pro-x3_s912-m8s-pro_s905x-t95_s912-t95z-plus_s905l3-unt400g1_s905lb-r3300l
           - seewo-sv21_smart-am40_station-m1_sw799_tn3399_zysj_tvi3315a_xiaobao_zcube1-max
@@ -160,7 +161,7 @@ on:
       armbian_kernel:
         description: "Select kernel version."
         required: false
-        default: "6.1.y_6.6.y"
+        default: "5.15.y_6.1.y"
         type: choice
         options:
           - 5.4.y
@@ -169,7 +170,7 @@ on:
           - 6.1.y
           - 6.6.y
           - 6.1.y_6.6.y
-          - 5.15.y_5.10.y
+          - 5.15.y_6.1.y
       auto_kernel:
         description: "Auto use the latest kernel."
         required: false
@@ -211,12 +212,12 @@ on:
       builder_name:
         description: "Set Armbian builder signature."
         required: false
-        default: "ophub"
+        default: "dearxjoe"
         type: choice
         options:
           - ophub
           - angel
-          - yourname
+          - dearxjoe
 
 env:
   TZ: America/New_York
@@ -278,7 +279,7 @@ jobs:
           armbian_buildpath="build/output/images"
           [[ -d "${armbian_buildpath}" ]] || mkdir -p "${armbian_buildpath}"
           ln -sf /builder/build ${GITHUB_WORKSPACE}/build
-          ln -sf /builder/build /home/runner/work/_actions/ophub/amlogic-s9xxx-armbian/main/build
+          ln -sf /builder/build /home/runner/work/_actions/dearxjoe/amlogic-s9xxx-armbian/main/build
 
           latest_version="$(curl -s \
                               -H "Accept: application/vnd.github+json" \
@@ -305,7 +306,7 @@ jobs:
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Rebuild Armbian [ ${{ inputs.set_release }} ]
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: dearxjoe/amlogic-s9xxx-armbian@main
         if: ${{ steps.down.outputs.status }} == 'success' && !cancelled()
         with:
           build_target: armbian
