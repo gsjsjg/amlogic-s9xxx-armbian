@@ -349,5 +349,6 @@ jobs:
             - Default password: 1234
             - Install command: armbian-install
             - Update command: armbian-update
+            - 本固件仅供dearxjoe测试使用。
             ### Armbian Image Verification
             - sha256sum
