@@ -777,7 +777,7 @@ copy_files() {
     different_bootfs="${different_files}/${board}/bootfs"
     different_rootfs="${different_files}/${board}/rootfs"
     # chmod +x  edit by.dearxjoe for ai3399-c 2024.07.02
-    chmod +x -R ${different_rootfs}/etc/init.d
+    #chmod +x -R ${different_rootfs}/etc/init.d
     [[ -d "${different_bootfs}" ]] && cp -rf ${different_bootfs}/* ${tag_bootfs}
     [[ -d "${different_rootfs}" ]] && cp -af --no-preserve=ownership ${different_rootfs}/* ${tag_rootfs}
 
