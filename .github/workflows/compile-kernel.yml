@@ -14,7 +14,7 @@ on:
         description: "Select the kernel source"
         required: false
        # default: "unifreq"
-        默认: "gsjsjg"
+        default: "gsjsjg"
         type: choice
         options:
           - unifreq
