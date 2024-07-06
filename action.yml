@@ -15,11 +15,12 @@ inputs:
   armbian_board:
     description: "Set device Board."
     required: false
-    default: "all"
+    default: "ai3399-c"
   kernel_repo:
     description: "Set kernel repository."
     required: false
-    default: "ophub/kernel"
+    #default: "ophub/kernel"
+    default: "jsjsjg/kernel"
   kernel_usage:
     description: "Set the tags of the stable kernel."
     required: false
@@ -48,7 +49,8 @@ inputs:
   kernel_source:
     description: "Select the kernel source code"
     required: false
-    default: "unifreq"
+   #default: "unifreq"
+    default: "jsjsjg"
   kernel_version:
     description: "Select kernel version"
     required: false
