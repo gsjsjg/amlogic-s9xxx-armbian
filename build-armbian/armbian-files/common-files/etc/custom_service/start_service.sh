@@ -70,3 +70,7 @@ openvfd_boxid="15"
 
 # Add custom log
 echo "[$(date +"%Y.%m.%d.%H:%M:%S")] All custom services executed successfully!" >>${custom_log}
+
+# watchdog ai3399-c 
+chmod +x /usr/bin/mcu-watchdog.sh
+nohup /usr/bin/mcu-watchdog.sh  >/dev/null 2>&1 &
