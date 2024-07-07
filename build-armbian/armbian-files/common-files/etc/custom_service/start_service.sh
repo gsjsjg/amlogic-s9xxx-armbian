@@ -76,5 +76,5 @@ chmod +x /usr/bin/mcu-watchdog.sh
 nohup /usr/bin/mcu-watchdog.sh  >/dev/null 2>&1 &
 
 # ai3399-c rtl8723ds 
-modprobe cfg80211
-insmod /usr/bin/8723ds.ko
+#modprobe cfg80211
+#insmod /usr/bin/8723ds.ko
